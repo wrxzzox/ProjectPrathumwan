@@ -5,12 +5,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 // Route files
-const hotels = require("./routes/hotels");
-const auth = require("./routes/auth");
-const bookings = require("./routes/bookings");
-const user = require("./routes/user");
-const reviews = require("./routes/reviews")
-const notification = require("./routes/notification")
+// const hotels = require("./routes/hotels");
 
 const app = express();
 app.use(express.json());
@@ -29,12 +24,7 @@ app.use(cors({
     credentials : false
 }));
 
-app.use("/api/v1/hotels", hotels);
-app.use("/api/v1/auth", auth);
-app.use("/api/v1/bookings", bookings);
-app.use("/api/v1/reviews", reviews);
-app.use("/api/v1/user", user);
-app.use("/api/v1/notifications", notification);
+// app.use("/api/v1/hotels", hotels);
 
 app.get("/", (req, res) => {
     res.status(200).json({success: true, data:{id:1}});
